@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Ngunduh Mantu Maulana & Eva</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background:#f7f2eb;
+    color:#333;
+    text-align:center;
+}
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+.hero h3{
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin:10px 0;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+section{
+    padding:50px 20px;
+}
+
+.card{
+    background:white;
+    max-width:800px;
+    margin:auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+h2{
+    color:#8b6b4a;
+    margin-bottom:15px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.box{
+    background:#8b6b4a;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    min-width:80px;
+}
+
+.box span{
+    display:block;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:#8b6b4a;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+    max-width:900px;
+    margin:auto;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+}
+
+footer{
+    background:#8b6b4a;
+    color:white;
+    padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h3>UNDANGAN NGUNDUH MANTU</h3>
+    <h1>Maulana Imam Hidayat</h1>
+    <h2>&</h2>
+    <h1>Eva</h1>
+    <p>28 September 2026</p>
+</div>
+
+<section>
+    <div class="card">
+        <h2>Assalamu'alaikum Wr. Wb.</h2>
+
+        <p>
+        Dengan memohon rahmat dan ridho Allah SWT,
+        kami mengundang Bapak/Ibu/Saudara/i untuk hadir
+        pada acara Ngunduh Mantu kami.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>Countdown Acara</h2>
+
+        <div class="countdown">
+            <div class="box">
+                <span id="hari">0</span>
+                Hari
+            </div>
+
+            <div class="box">
+                <span id="jam">0</span>
+                Jam
+            </div>
+
+            <div class="box">
+                <span id="menit">0</span>
+                Menit
+            </div>
+
+            <div class="box">
+                <span id="detik">0</span>
+                Detik
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>Detail Acara</h2>
+
+        <p><b>Hari:</b> Senin</p>
+        <p><b>Tanggal:</b> 28 September 2026</p>
+        <p><b>Waktu:</b> 09.00 WIB - Selesai</p>
+        <p><b>Tempat:</b> Isi alamat lengkap di sini</p>
+
+        <a class="btn"
+        href="https://maps.google.com"
+        target="_blank">
+        Buka Google Maps
+        </a>
+    </div>
+</section>
+
+<section>
+    <h2>Galeri Foto</h2>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/300/300?1">
+        <img src="https://picsum.photos/300/300?2">
+        <img src="https://picsum.photos/300/300?3">
+        <img src="https://picsum.photos/300/300?4">
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>Ucapan & Doa</h2>
+
+        <p>
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami
+        apabila Bapak/Ibu/Saudara/i berkenan hadir serta
+        memberikan doa restu.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <h3>Terima Kasih</h3>
+    <p>Maulana Imam Hidayat & Eva</p>
+</footer>
+
+<script>
+const acara = new Date("September 28, 2026 09:00:00").getTime();
+
+setInterval(() => {
+
+const sekarang = new Date().getTime();
+const selisih = acara - sekarang;
+
+const hari = Math.floor(selisih/(1000*60*60*24));
+const jam = Math.floor((selisih%(1000*60*60*24))/(1000*60*60));
+const menit = Math.floor((selisih%(1000*60*60))/(1000*60));
+const detik = Math.floor((selisih%(1000*60))/1000);
+
+document.getElementById("hari").innerHTML = hari;
+document.getElementById("jam").innerHTML = jam;
+document.getElementById("menit").innerHTML = menit;
+document.getElementById("detik").innerHTML = detik;
+
+},1000);
+</script>
+
+</body>
+</html>
